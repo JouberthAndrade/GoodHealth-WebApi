@@ -1,4 +1,4 @@
-﻿using GoodHealth.Shared.Shared.BaseRepository;
+﻿using GoodHealth.Shared.Interfaces;
 using System;
 using System.Threading.Tasks;
 using Model = GoodHealth.Domain.Empresa.Entities;

@@ -14,7 +14,8 @@ namespace GoodHealth.CroosCuttimg.Ioc.MediatorExtensions
         public static void RegisterMediatorHandler(this IServiceCollection services)
         {
             services.AddScoped<IHandler, Handler>();
-         //   services.AddMediatR(services);
+            services.AddScoped<IValidationResultBuilder, ValidationResultBuilder>();
+            //   services.AddMediatR(services);
         }
 
         public static void RegisterMediatorHandler(this IServiceCollection services, Assembly[] assemblies)

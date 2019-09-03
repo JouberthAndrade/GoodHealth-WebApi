@@ -12,6 +12,8 @@ using Microsoft.Extensions.PlatformAbstractions;
 using AutoMapper;
 using GoodHealth.CrossCutting.Usuario.Mappings;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Http;
 
 namespace GoodHealthWebApi
 {
@@ -40,6 +42,16 @@ namespace GoodHealthWebApi
             };
 
             services.Configure(Configuration, profiles);
+
+            services.AddCors(o =>
+                o.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .AllowAnyOrigin();
+                }));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
@@ -74,6 +86,8 @@ namespace GoodHealthWebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            ConfigureDefaultRoute(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -84,12 +98,26 @@ namespace GoodHealthWebApi
                 app.UseHsts();
             }
 
+            app.UseCors("CorsPolicy");
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
             app.UseSwagger(c => c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Value));
 
             app.UseSwaggerUI(c => c.SwaggerEndpoint(Configuration["Swagger:Url"], "V1 Docs"));
+        }
+
+        private static void ConfigureDefaultRoute(IApplicationBuilder app)
+        {
+            var routeBuilder = new RouteBuilder(app);
+
+            routeBuilder.MapGet("/", context =>
+            {
+                return context.Response.WriteAsync("Api running.");
+            });
+
+            app.UseRouter(routeBuilder.Build());
         }
     }
 }

@@ -1,11 +1,12 @@
-﻿using MediatR;
+﻿using GoodHealth.Data.Shared.Events;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GoodHealth.Domain.Shared.Interface
 {
-    public interface IEvent : INotification
+    public interface IEvent : IMessage, INotification
     {
         DateTime Timestamp { get; }
         string SessionId { get; }

@@ -1,6 +1,6 @@
 ﻿using GoodHealth.Data.Shared.Context;
 using GoodHealth.Domain.Empresa.Repositories;
-using GoodHealth.Shared.Shared.BaseRepository;
+using GoodHealth.Shared.Data;
 using System;
 using System.Threading.Tasks;
 using Model = GoodHealth.Domain.Empresa.Entities;

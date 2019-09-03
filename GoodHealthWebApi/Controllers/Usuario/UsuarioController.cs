@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using GoodHealth.CroosCuttimg.Ioc;
+using GoodHealth.Domain.Result;
 using GoodHealth.Domain.Usuario.Repositories;
+using GoodHealth.Shared.Shared.Dto;
 using GoodHealth.Shared.Usuario;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,27 +15,29 @@ using Microsoft.Extensions.DependencyInjection;
 namespace GoodHealth.WebApi.Controllers.Usuario
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class UsuarioController : ControllerBase
+    public class UsuarioController : BaseController
     {
         private readonly IServiceProvider serviceProvider;
         private readonly IMapper mapper;
 
-        public UsuarioController(IServiceProvider serviceProvider
-        , IMapper mapper) 
+        public UsuarioController(IServiceProvider serviceProvider,
+                                IValidationResultBuilder validationResultBuilder,
+                                IMapper mapper) : base(validationResultBuilder)
         {
             this.serviceProvider = serviceProvider;
             this.mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<List<UsuarioDto>> Obter()
+        public async Task<ValidationResultModel<PagedQueryList>> GetAsync()
         {
-            var usuarios = serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAll().Result;
+            var usuarios = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAllPaged();
+            var retorno = new PagedQueryList();
 
-            var dto = mapper.Map<List<UsuarioDto>>(usuarios);
+            retorno.Items = mapper.Map<List<UsuarioDto>>(usuarios.Items);
+            retorno.TotalCount = usuarios.TotalCount;
 
-            return await Task.FromResult(dto.ToList());
+            return await _validationResultBuilder.BuildAsync(retorno);
         }
     }
 }

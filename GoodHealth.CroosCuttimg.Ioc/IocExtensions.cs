@@ -1,5 +1,7 @@
-﻿using GoodHealth.CroosCuttimg.Ioc.MediatorExtensions;
+﻿using GoodHealth.CroosCuttimg.Ioc.Localizations;
+using GoodHealth.CroosCuttimg.Ioc.MediatorExtensions;
 using GoodHealth.Data.Shared.Context;
+using GoodHealth.Domain.Notifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +21,11 @@ namespace GoodHealth.CroosCuttimg.Ioc
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
             services.RegisterMediatorHandler(assemblies);
+            services.RegisterJsonLocalization();
+
+
+            services.AddScoped<IValidationResultBuilder, ValidationResultBuilder>();
+            services.AddScoped<IDomainNotificationService, DomainNotificationService>();
         }
 
         public static void RegisterRepositoryDependencies(this IServiceCollection services, string connectionString)
@@ -27,7 +34,8 @@ namespace GoodHealth.CroosCuttimg.Ioc
                 options.EnableDetailedErrors(true)
                 .UseSqlServer(connectionString, x => x.EnableRetryOnFailure()
                                                       .MaxBatchSize(500)
-                                                      .UseRelationalNulls(true)), 128);
+                                                      .UseRelationalNulls(true)), 128)
+                                                      ;
 
         }
     }

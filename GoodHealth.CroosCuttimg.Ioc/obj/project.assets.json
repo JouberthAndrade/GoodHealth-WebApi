@@ -15,6 +15,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "FluentAssertions/5.9.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/FluentAssertions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/FluentAssertions.dll": {}
+        }
+      },
       "Flunt/1.0.4": {
         "type": "package",
         "compile": {
@@ -22,6 +34,21 @@
         },
         "runtime": {
           "lib/netstandard2.0/Flunt.dll": {}
+        }
+      },
+      "Folke.Localization.Json/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Localization.Abstractions": "1.1.0",
+          "Microsoft.Extensions.Options": "1.1.0",
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/Folke.Localization.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Folke.Localization.Json.dll": {}
         }
       },
       "MediatR/7.0.0": {
@@ -210,6 +237,30 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Localization/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Localization.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Localization.Abstractions/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll": {}
         }
       },
       "Microsoft.Extensions.Logging/2.2.0": {
@@ -587,6 +638,18 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "System.Configuration.ConfigurationManager/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        }
+      },
       "System.Data.SqlClient/4.6.1": {
         "type": "package",
         "dependencies": {
@@ -909,6 +972,21 @@
           }
         }
       },
+      "System.Security.Cryptography.ProtectedData/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Security.Principal.Windows/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1068,6 +1146,35 @@
         "lib/netstandard2.0/AutoMapper.xml"
       ]
     },
+    "FluentAssertions/5.9.0": {
+      "sha512": "JZxb5DuspmuH4A5p9bfj060evQnwIUkxxfFMG9F/pa7gl1Ry2r2nuQbu5G4UWGQQTtpTxPpVowqNDdBkA0G2Mw==",
+      "type": "package",
+      "path": "fluentassertions/5.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentassertions.5.9.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net45/FluentAssertions.dll",
+        "lib/net45/FluentAssertions.pdb",
+        "lib/net45/FluentAssertions.xml",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/netcoreapp2.0/FluentAssertions.dll",
+        "lib/netcoreapp2.0/FluentAssertions.pdb",
+        "lib/netcoreapp2.0/FluentAssertions.xml",
+        "lib/netstandard1.3/FluentAssertions.dll",
+        "lib/netstandard1.3/FluentAssertions.pdb",
+        "lib/netstandard1.3/FluentAssertions.xml",
+        "lib/netstandard1.6/FluentAssertions.dll",
+        "lib/netstandard1.6/FluentAssertions.pdb",
+        "lib/netstandard1.6/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml"
+      ]
+    },
     "Flunt/1.0.4": {
       "sha512": "zsKA3Wol1+UeQBYtXuO56+ua6DBUpD5dcp3iAa86W5WcMLOWBMaDXKdqIrrLNgQUOW/U/svecb4ldgqwnC9XDQ==",
       "type": "package",
@@ -1078,6 +1185,19 @@
         "flunt.1.0.4.nupkg.sha512",
         "flunt.nuspec",
         "lib/netstandard2.0/Flunt.dll"
+      ]
+    },
+    "Folke.Localization.Json/1.4.0": {
+      "sha512": "HdJKuslGOcGTA+VGLNWHiuZBhrcfGwIhwFmaAPEPncXYkQGkIVwDeGq1WLYCWC/twcb2C48zOi2WhH2nQCohqg==",
+      "type": "package",
+      "path": "folke.localization.json/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "folke.localization.json.1.4.0.nupkg.sha512",
+        "folke.localization.json.nuspec",
+        "lib/net451/Folke.Localization.Json.dll",
+        "lib/netstandard1.6/Folke.Localization.Json.dll"
       ]
     },
     "MediatR/7.0.0": {
@@ -1347,6 +1467,32 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Localization/2.2.0": {
+      "sha512": "3nBQLeBrcd4Rgd9vQi4gF5NgAWxnQrHekjjwlgww4wyLNfJDizjiex2resOLoAuAgy3y2IIAWjOpbr0UKR2ykw==",
+      "type": "package",
+      "path": "microsoft.extensions.localization/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.xml",
+        "microsoft.extensions.localization.2.2.0.nupkg.sha512",
+        "microsoft.extensions.localization.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Localization.Abstractions/2.2.0": {
+      "sha512": "FQzXG/lYR9UOM2zHpqsjTRpp3EghIYo3FCsQpfmtbp+glPaU0WXZfNmMjyqBRmMj1Sq93fPnC+G9zzYRauuRQA==",
+      "type": "package",
+      "path": "microsoft.extensions.localization.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Localization.Abstractions.xml",
+        "microsoft.extensions.localization.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.extensions.localization.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging/2.2.0": {
@@ -2195,6 +2341,27 @@
         "ref/xamarinwatchos10/_._",
         "system.componentmodel.annotations.4.5.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Configuration.ConfigurationManager/4.4.0": {
+      "sha512": "gWwQv/Ug1qWJmHCmN17nAbxJYmQBM/E94QxKLksvUiiKB1Ld3Sc/eK1lgmbSjDFxkQhVuayI/cGFZhpBSodLrg==",
+      "type": "package",
+      "path": "system.configuration.configurationmanager/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Configuration.ConfigurationManager.dll",
+        "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.dll",
+        "ref/net461/System.Configuration.ConfigurationManager.xml",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll",
+        "ref/netstandard2.0/System.Configuration.ConfigurationManager.xml",
+        "system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+        "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -3492,6 +3659,47 @@
         "version.txt"
       ]
     },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "sha512": "cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "type": "package",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.dll",
+        "ref/net461/System.Security.Cryptography.ProtectedData.xml",
+        "ref/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "ref/netstandard2.0/System.Security.Cryptography.ProtectedData.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/win/lib/net46/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
+        "system.security.cryptography.protecteddata.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Security.Principal.Windows/4.5.0": {
       "sha512": "U77HfRXlZlOeIXd//Yoj6Jnk8AXlbeisf1oq1os+hxOGVnuG+lGSfGqTwTZBoORFF6j/0q7HXIl8cqwQ9aUGqQ==",
       "type": "package",
@@ -3811,6 +4019,9 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 9.0.0",
+      "FluentAssertions >= 5.9.0",
+      "Flunt >= 1.0.4",
+      "Folke.Localization.Json >= 1.4.0",
       "GoodHealth.CrossCutting >= 1.0.0",
       "GoodHealth.Data >= 1.0.0",
       "GoodHealth.Domain >= 1.0.0",
@@ -3821,6 +4032,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 2.2.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.6",
       "Microsoft.Extensions.DependencyInjection >= 2.2.0",
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 2.2.0",
+      "Microsoft.Extensions.Localization >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -3884,6 +4097,18 @@
             "target": "Package",
             "version": "[9.0.0, )"
           },
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[5.9.0, )"
+          },
+          "Flunt": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          },
+          "Folke.Localization.Json": {
+            "target": "Package",
+            "version": "[1.4.0, )"
+          },
           "MediatR": {
             "target": "Package",
             "version": "[7.0.0, )"
@@ -3905,6 +4130,14 @@
             "version": "[2.2.6, )"
           },
           "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.Localization": {
             "target": "Package",
             "version": "[2.2.0, )"
           },
