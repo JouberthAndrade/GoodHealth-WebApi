@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Unio.Consol.Core.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.PreProcessamentoRpr.PreProcessamentoRprController.ObterContratoElegibilidade(System.Guid,System.String,System.String)">
+            <summary>
+            Obter dados do contrato de elegibilidade
+            </summary>
+            <param name="prestadorId">Id do prestador</param>
+            <param name="atendimentoLocalAtendimentoId">Id do local de atendimento</param>
+            <param name="atendimentoCarteira">Número da carteira do paciente</param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.PreProcessamentoRpr.PreProcessamentoRprController.ObterContratoSolicitacao(System.Guid,Unio.Consol.Configuracao.Shared.Enums.TipoAplicacaoSolicitacaoEnum)">
+            <summary>
+            Obter dados do contrato de solicitação passos: 
+            InclusaoItemAssistencial = 1
+            AvancarPasso1 = 2
+            AvancarPasso2 = 3
+            Passo1ComBiometria = 4
+            Essa rota nao funciona para solicitação com programação, pegar o id da solicitação no mongo
+            </summary>
+            <param name="id">Id da solicitação</param>
+            <param name="passo">Passo que será aplicado utilizado o contrato</param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.PreProcessamentoRpr.PreProcessamentoRprController.ObterContratoQuestionarioInternacao(System.Guid)">
+            <summary>
+            Obter dados questionário para guias de internação
+            </summary>
+            <param name="id">Id do atendimento</param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.PreProcessamentoRpr.PreProcessamentoRprController.ObterContratoQuestionarioSpSadt(System.Guid)">
+            <summary>
+            Obter dados questionário para guias sp/sadt
+            </summary>
+            <param name="id">Id do atendimento</param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.PreProcessamentoRpr.PreProcessamentoRprController.ObterContratoQuestionarioPaciente(System.Guid)">
+            <summary>
+            A ser implementado
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.GrupoAcessoRapidoController.InserirGrupoAcessoRapido(Unio.Consol.Core.Application.Solicitacao.Commands.InserirGrupoAcessoRapidoCommand)">
+            <summary>
+            Método para inserção de Grupo de Acesso Rápido.
+            </summary>
+            <param name="command">Command com os fields necessários para criação de um grupo de acesso rápido.</param>
+            <returns>Booleano representando o sucesso da criação.</returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.GrupoAcessoRapidoController.EditarGrupoAcessoRapido(Unio.Consol.Core.Application.Solicitacao.Commands.EditarGrupoAcessoRapidoCommand)">
+            <summary>
+            Método para edição de Grupo de Acesso Rápido.
+            </summary>
+            <param name="command">Command com os fields necessários para criação de um grupo de acesso rápido. Todos os Itens Assistenciais a serem 
+            alterados ou devem ser enviados. Os deletados devem manter o campo "Deletado" como true.</param>
+            <returns>Booleano representando o sucesso da edição.</returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.GrupoAcessoRapidoController.ObterGruposAcessoRapido(System.Guid,System.Guid)">
+            <summary>
+            Retorna lista de grupos de acessos rápido com seus perspectivos item assistenciais por médico e local de atendimento
+            </summary>
+            <param name="medicoId"></param>
+            <param name="localAtendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.AdicionarItemSolicitacaoSpSadt(Unio.Consol.Core.Application.Solicitacao.Commands.AdicionarItemSolicitacaoSpSadtCommand)">
+            <summary>
+            Adiciona uma lista de itens assistenciais a solicitação SP / SADT.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.RemoverItemSolicitacao(System.Guid,System.Guid)">
+            <summary>
+            Remove um item assistencial de uma solicitação, SP/SADT ou Internação
+            </summary>
+            <param name="atendimentoId"></param>
+            <param name="itemAssistencialId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.AtualizarQuantidadeItemSolicitacao(Unio.Consol.Core.Application.Solicitacao.Commands.AtualizarQuantidadeItemAssistencialSolicitacaoCommand)">
+            <summary>
+            Altera a quantidade de um item assistencial, SP/SADT ou Internação
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.AdicionarItemSolicitacaoInternacao(Unio.Consol.Core.Application.Solicitacao.Commands.AdicionarItemSolicitacaoInternacaoCommand)">
+            <summary>
+            Adiciona uma lista de item assistencial, Internação.
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.ObterSolicitacao(System.Guid)">
+            <summary>
+            Recupera todos os itens da solicitação, SP/SADT ou Internação. Somente dados no MongoDB
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.Obter(System.Guid)">
+            <summary>
+            Recupera todos os itens da solicitação, SP/SADT ou Internação. Recuprar registros no MongoDB caso não houver regsitros ele vai no SQL Server
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.ObterParaFinalizarAtendimento(System.Guid)">
+            <summary>
+            Recupera todos os itens da solicitação, SP/SADT ou Internação. Pesquisa utilizando a a view View Solicitacao.
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.ObterSolicitacaoSpSdat(System.Guid)">
+            <summary>
+            Recupera todos os itens assistenciais da solicitação SP SADT.
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.ObterSolicitacaoInternacao(System.Guid)">
+            <summary>
+            Recupera todos os itens assistenciais da solicitação Internação
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.AvancarSolicitacao(System.Guid)">
+            <summary>
+            Action utilizada para avançar no carrinho de compras da solicitação, a action executa a divisão automática de itens de acordo com os tipos de agrupamentos.
+            </summary>
+            <param name="atendimentoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.IndicacaoClinicaSolicitacao(Unio.Consol.Core.Application.Solicitacao.Commands.AdicionarEditarIndicacaoClinicaCommand)">
+            <summary>
+            Adicionar ou Atualizar indicação clinica do item da solicitação
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Unio.Consol.Core.WebApi.Controllers.Solicitacao.SolicitacaoController.ObterIndicacaoClinica(System.Guid,System.Guid)">
+            <summary>
+            Buscar Item Solicitação Sp Sadt, utilizado para retornar a indicação clínica do item da solicitação
+            </summary>
+            <param name="atendimentoId"></param>
+            <param name="itemSolicitacaoId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

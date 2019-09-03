@@ -1,0 +1,14 @@
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.CrossCutting.deps.json
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.CrossCutting.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.csproj.CoreCompileInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.AssemblyInfoInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.AssemblyInfo.cs
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.CrossCutting.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.Domain.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.Shared.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.Domain.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\bin\Debug\netcoreapp2.2\GoodHealth.Shared.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.csprojAssemblyReference.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.csproj.CopyComplete
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.CrossCutting\obj\Debug\netcoreapp2.2\GoodHealth.CrossCutting.pdb

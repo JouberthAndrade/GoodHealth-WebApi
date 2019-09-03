@@ -1,0 +1,31 @@
+﻿using Flunt.Notifications;
+using GoodHealth.Domain.Shared.Interface;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace GoodHealth.Domain.Shared
+{
+    public abstract class Entity<TPrimaryKey> : Notifiable, IEntity<TPrimaryKey>
+    {
+        public virtual DateTime CreateDate { get; protected set; }
+        public virtual DateTime? DeletedDate { get; protected set; }
+        public virtual bool Ativo { get; protected set; }
+
+        [JsonProperty("id")]
+        public TPrimaryKey Id { get; protected set; }
+    }
+    public abstract class Entity : Entity<Guid>
+    {
+        protected Entity()
+        {
+            if (Id == Guid.Empty)
+            {  // solution for use entity with base for document db entity
+                this.Id = Guid.NewGuid();
+                this.CreateDate = DateTime.Now;
+                this.Ativo = true;
+            }
+        }
+    }
+}

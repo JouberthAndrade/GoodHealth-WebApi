@@ -1,0 +1,8 @@
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\bin\Debug\netcoreapp2.2\GoodHealth.Application.deps.json
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\bin\Debug\netcoreapp2.2\GoodHealth.Application.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\bin\Debug\netcoreapp2.2\GoodHealth.Application.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\obj\Debug\netcoreapp2.2\GoodHealth.Application.csproj.CoreCompileInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\obj\Debug\netcoreapp2.2\GoodHealth.Application.AssemblyInfoInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\obj\Debug\netcoreapp2.2\GoodHealth.Application.AssemblyInfo.cs
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\obj\Debug\netcoreapp2.2\GoodHealth.Application.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Application\obj\Debug\netcoreapp2.2\GoodHealth.Application.pdb

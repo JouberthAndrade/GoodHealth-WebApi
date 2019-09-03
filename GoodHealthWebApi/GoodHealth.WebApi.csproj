@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Empresa\" />
+    <Folder Include="Controllers\Produto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GoodHealth.Application\GoodHealth.Application.csproj" />
+    <ProjectReference Include="..\GoodHealth.CroosCuttimg.Ioc\GoodHealth.CroosCuttimg.Ioc.csproj" />
+    <ProjectReference Include="..\GoodHealth.Domain\GoodHealth.Domain.csproj" />
+    <ProjectReference Include="..\GoodHealth.Shared\GoodHealth.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

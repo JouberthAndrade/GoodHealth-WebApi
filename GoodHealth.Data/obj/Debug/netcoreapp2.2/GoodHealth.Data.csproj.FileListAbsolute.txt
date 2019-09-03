@@ -1,0 +1,15 @@
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Data.deps.json
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Data.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.csprojAssemblyReference.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.csproj.CoreCompileInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.AssemblyInfoInputs.cache
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.AssemblyInfo.cs
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Domain.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\Unio.Consol.Alertas.Domain.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Data.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Domain.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.csproj.CopyComplete
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\obj\Debug\netcoreapp2.2\GoodHealth.Data.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Shared.dll
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Data\bin\Debug\netcoreapp2.2\GoodHealth.Shared.pdb
