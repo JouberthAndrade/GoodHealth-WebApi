@@ -8,7 +8,7 @@ namespace GoodHealth.Domain.Empresa.Entities
 {
     public class Empresa : Entity
     {
-        private readonly List<Model.Usuario> usuarios = new List<Model.Usuario>();
+        readonly List<Model.Usuario> usuarios = new List<Model.Usuario>();
 
 
         public string Nome { get; private set; }

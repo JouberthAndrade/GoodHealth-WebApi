@@ -5,11 +5,11 @@ using System.Text;
 
 namespace GoodHealth.Shared.Shared.Dto
 {
-    public struct PagedQueryList
+    public struct PagedQueryList<T>
     {
         public int Page { get; set; }
         public int PageSize { get; set; }
         public int TotalCount { get; set; }
-        public List<UsuarioDto> Items { get; set; }
+        public List<T> Items { get; set; }
     }
 }

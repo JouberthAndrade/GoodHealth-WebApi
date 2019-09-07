@@ -35,10 +35,10 @@ namespace GoodHealth.WebApi.Controllers.Usuario
         }
 
         [HttpGet]
-        public async Task<ValidationResultModel<PagedQueryList>> GetAsync()
+        public async Task<ValidationResultModel<PagedQueryList<UsuarioDto>>> GetAsync()
         {
             var usuarios = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAllPaged();
-            var retorno = new PagedQueryList();
+            var retorno = new PagedQueryList<UsuarioDto>();
 
             retorno.Items = mapper.Map<List<UsuarioDto>>(usuarios.Items);
             retorno.TotalCount = usuarios.TotalCount;

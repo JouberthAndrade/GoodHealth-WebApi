@@ -24,10 +24,13 @@ namespace GoodHealth.Data.Usuario.Repositories
 
         public Task<Model.Usuario> FindAsync(Guid id)
         {
+
             return Task.FromResult(
                 Set.Include(x => x.Empresa)
                     .Where(x => x.Id == id).FirstOrDefault()
                 );
+
+
         }
 
         public Task<List<Model.Usuario>> FindAll()

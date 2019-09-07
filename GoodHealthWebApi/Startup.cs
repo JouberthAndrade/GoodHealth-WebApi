@@ -14,6 +14,7 @@ using GoodHealth.CrossCutting.Usuario.Mappings;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Http;
+using GoodHealth.CrossCutting.Empresa.Mappings;
 
 namespace GoodHealthWebApi
 {
@@ -38,7 +39,8 @@ namespace GoodHealthWebApi
             services.RegisterRepositoryDependencies(Configuration["ConnectionStrings:DefaultConnection"]);
 
             var profiles = new List<Profile> {
-                new UsuarioDomainToDto()
+                new UsuarioDomainToDto(),
+                new EmpresaDomainToDto()
             };
 
             services.Configure(Configuration, profiles);

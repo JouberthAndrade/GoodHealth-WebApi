@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GoodHealth.CrossCutting.Empresa.Mappings;
 using GoodHealth.CrossCutting.Usuario.Mappings;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace GoodHealth.CrossCutting
             return new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new UsuarioDomainToDto());
+                cfg.AddProfile(new EmpresaDomainToDto());
 
                 foreach (var profile in profiles)
                 {

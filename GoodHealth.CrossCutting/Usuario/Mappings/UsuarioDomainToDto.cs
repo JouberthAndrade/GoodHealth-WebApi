@@ -13,7 +13,7 @@ namespace GoodHealth.CrossCutting.Usuario.Mappings
             CreateMap<Model.Usuario, UsuarioDto>()
                 .ForMember(dest => dest.Empresa, opt => opt.MapFrom(src => src.Empresa.Nome));
 
-            CreateMap<PagedQuery<Model.Usuario>, PagedQueryList>();
+            CreateMap<PagedQuery<Model.Usuario>, PagedQueryList<UsuarioDto>>();
         }
     }
 }

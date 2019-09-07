@@ -11,6 +11,7 @@ namespace GoodHealth.CroosCuttimg.Ioc
         public static void Configure(this IServiceCollection services, IConfiguration configuration, IList<Profile> profiles)
         {
             services.UsuarioConfigure(configuration);
+            services.EmpresaConfigure(configuration);
 
             services.AddSingleton(ctx =>
             {

@@ -1,6 +1,7 @@
 ﻿using Flunt.Notifications;
 using GoodHealth.Data.Usuario.Configurations;
-using Model = GoodHealth.Domain.Usuario.Entities;
+using ModelUser = GoodHealth.Domain.Usuario.Entities;
+using ModelEmpresa = GoodHealth.Domain.Empresa.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace GoodHealth.Data.Shared.Context
 {
     public class GlobalContext : DbContext
     {
-        public DbSet<Model.Usuario> Usuario { get; set; }
+        public DbSet<ModelUser.Usuario> Usuario { get; set; }
+        public DbSet<ModelEmpresa.Empresa> Empresa { get; set; }
 
         public GlobalContext(DbContextOptions<GlobalContext> options) : base(options)
         {
