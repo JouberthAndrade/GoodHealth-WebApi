@@ -1,12 +1,11 @@
-﻿using GoodHealth.CroosCuttimg.Ioc.Command;
-using GoodHealth.Domain.Shared.Interface;
-using GoodHealth.Shared.Shared.Commands;
+﻿using GoodHealth.Shared.Commands.Interface;
+using GoodHealth.Shared.Entitys.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GoodHealth.CroosCuttimg.Ioc.Handles.Interface
+namespace GoodHealth.Shared.Handles.Interface
 {
     public interface IHandler
     {

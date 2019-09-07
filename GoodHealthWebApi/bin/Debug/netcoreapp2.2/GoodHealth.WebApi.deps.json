@@ -782,6 +782,8 @@
       },
       "GoodHealth.Application/1.0.0": {
         "dependencies": {
+          "AutoMapper": "9.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "GoodHealth.Domain": "1.0.0",
           "Microsoft.Extensions.Localization": "2.2.0"
         },

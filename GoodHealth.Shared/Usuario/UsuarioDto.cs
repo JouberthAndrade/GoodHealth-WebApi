@@ -16,5 +16,7 @@ namespace GoodHealth.Shared.Usuario
 
         public string Empresa { get; set; }
 
+        public bool Ativo { get; set; }
+
     }
 }

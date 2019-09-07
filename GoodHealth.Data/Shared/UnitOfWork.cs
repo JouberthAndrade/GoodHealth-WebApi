@@ -1,18 +1,19 @@
-﻿using GoodHealth.Shared.Interfaces;
+﻿using GoodHealth.Data.Shared.Context;
+using GoodHealth.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace GoodHealth.Shared.Data
+namespace GoodHealth.Data.Shared.Data
 {
     /// <summary>
     /// Implements database transaction control 
     /// </summary>
     public class UnitOfWork : IUnitOfWork
     {
-        DbContext _context;
+        GlobalContext _context;
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(GlobalContext context)
         {
             _context = context;
         }        

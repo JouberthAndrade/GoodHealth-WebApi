@@ -1,6 +1,6 @@
 ﻿using GoodHealth.CroosCuttimg.Ioc.Localizations.Interface;
-using GoodHealth.Domain.Notifications;
 using GoodHealth.Domain.Result;
+using GoodHealth.Shared.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;

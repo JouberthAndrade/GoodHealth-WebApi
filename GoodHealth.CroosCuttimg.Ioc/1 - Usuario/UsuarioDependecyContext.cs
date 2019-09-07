@@ -9,7 +9,9 @@ namespace GoodHealth.CroosCuttimg.Ioc
     {
         public static void UsuarioConfigure(this IServiceCollection services, IConfiguration configuration)
         {
-             services.AddScoped(typeof(IUsuarioReadRepository), typeof(UsuarioReadRepository));
+            services.AddScoped(typeof(IUsuarioReadRepository), typeof(UsuarioReadRepository));
+            services.AddScoped(typeof(IUsuarioWriteRepository), typeof(UsuarioWriteRepository));
+            
         }
     }
 }

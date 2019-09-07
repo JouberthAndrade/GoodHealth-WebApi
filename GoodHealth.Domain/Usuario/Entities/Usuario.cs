@@ -1,5 +1,5 @@
 ﻿using Flunt.Validations;
-using GoodHealth.Domain.Shared;
+using GoodHealth.Shared.Entitys;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,6 +26,7 @@ namespace GoodHealth.Domain.Usuario.Entities
             this.Nome = nome;
             this.Email = email;
             this.Telefone = telefone;
+            this.CreateDate = DateTime.Now;
 
             AddNotifications(new Contract()
                 .Requires()

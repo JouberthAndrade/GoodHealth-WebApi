@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.Shared.Shared.Commands
+namespace GoodHealth.Shared.Commands.Interface
 {
     public interface ICommandResult
     {

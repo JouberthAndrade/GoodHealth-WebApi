@@ -1,12 +1,11 @@
 ﻿using Flunt.Notifications;
 using GoodHealth.Data.Shared.Events;
-using GoodHealth.Shared.Shared.Commands;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.CroosCuttimg.Ioc.Command
+namespace GoodHealth.Shared.Commands.Interface
 {
     public interface ICommand<TCommandResult> :
         IMessage,

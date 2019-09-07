@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.Shared.Shared.Entitys.Interface
+namespace GoodHealth.Shared.Entitys.Interface
 {
     public interface IDeletable
     {

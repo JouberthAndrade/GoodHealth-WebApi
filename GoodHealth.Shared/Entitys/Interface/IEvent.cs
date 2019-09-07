@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.Domain.Shared.Interface
+namespace GoodHealth.Shared.Entitys.Interface
 {
     public interface IEvent : IMessage, INotification
     {

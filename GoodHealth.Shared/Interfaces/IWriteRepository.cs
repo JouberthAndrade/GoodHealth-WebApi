@@ -1,4 +1,4 @@
-﻿using GoodHealth.Domain.Shared;
+﻿using GoodHealth.Shared.Entitys;
 using System.Threading.Tasks;
 
 namespace GoodHealth.Shared.Interfaces

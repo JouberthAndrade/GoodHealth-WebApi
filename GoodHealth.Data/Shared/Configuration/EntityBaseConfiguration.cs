@@ -1,4 +1,4 @@
-﻿using GoodHealth.Domain.Shared;
+﻿using GoodHealth.Shared.Entitys;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

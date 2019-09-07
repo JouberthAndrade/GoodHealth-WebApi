@@ -1,14 +1,14 @@
 ﻿using GoodHealth.CroosCuttimg.Ioc.Localizations;
 using GoodHealth.CroosCuttimg.Ioc.MediatorExtensions;
 using GoodHealth.Data.Shared.Context;
-using GoodHealth.Domain.Notifications;
+using GoodHealth.Data.Shared.Data;
+using GoodHealth.Shared.Interfaces;
+using GoodHealth.Shared.Notifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace GoodHealth.CroosCuttimg.Ioc
 {
@@ -34,8 +34,9 @@ namespace GoodHealth.CroosCuttimg.Ioc
                 options.EnableDetailedErrors(true)
                 .UseSqlServer(connectionString, x => x.EnableRetryOnFailure()
                                                       .MaxBatchSize(500)
-                                                      .UseRelationalNulls(true)), 128)
-                                                      ;
+                                                      .UseRelationalNulls(true)), 128);
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         }
     }

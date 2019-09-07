@@ -1,10 +1,10 @@
 ﻿using GoodHealth.Data.Shared.Events;
-using GoodHealth.Domain.Shared.Interface;
+using GoodHealth.Shared.Entitys.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.Domain.Notifications
+namespace GoodHealth.Shared.Notifications
 {
     public class DomainNotification : IEvent
     {

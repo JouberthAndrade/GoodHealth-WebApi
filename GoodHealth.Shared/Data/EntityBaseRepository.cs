@@ -1,7 +1,7 @@
 ﻿using Flunt.Validations;
-using GoodHealth.Domain.Shared;
+using GoodHealth.Shared.Entitys;
 using GoodHealth.Shared.Interfaces;
-using GoodHealth.Shared.Shared.Entitys.Interface;
+using GoodHealth.Shared.Entitys.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.Internal;

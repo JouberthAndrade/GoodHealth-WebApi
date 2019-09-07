@@ -1,11 +1,11 @@
 ﻿using Flunt.Notifications;
-using GoodHealth.Domain.Shared.Interface;
+using GoodHealth.Shared.Entitys.Interface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GoodHealth.Domain.Shared
+namespace GoodHealth.Shared.Entitys
 {
     public abstract class Entity<TPrimaryKey> : Notifiable, IEntity<TPrimaryKey>
     {

@@ -1,4 +1,4 @@
-﻿using GoodHealth.Domain.Notifications;
+﻿using GoodHealth.Shared.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;

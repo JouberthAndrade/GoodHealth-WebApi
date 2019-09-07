@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GoodHealth.Domain.Notifications
+namespace GoodHealth.Shared.Notifications
 {
     public class DomainNotificationHandler : IDomainNotificationHandler
     {

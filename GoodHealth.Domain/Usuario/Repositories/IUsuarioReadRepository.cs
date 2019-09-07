@@ -1,10 +1,7 @@
 ﻿using GoodHealth.Shared.Data;
 using GoodHealth.Shared.Interfaces;
-using GoodHealth.Shared.Usuario;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Model = GoodHealth.Domain.Usuario.Entities;
 

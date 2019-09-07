@@ -1,5 +1,5 @@
 ﻿using Flunt.Validations;
-using GoodHealth.Domain.Shared;
+using GoodHealth.Shared.Entitys;
 using System;
 using System.Collections.Generic;
 using Model = GoodHealth.Domain.Usuario.Entities;

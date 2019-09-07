@@ -1,5 +1,5 @@
-﻿using GoodHealth.CroosCuttimg.Ioc.Handles;
-using GoodHealth.CroosCuttimg.Ioc.Handles.Interface;
+﻿using GoodHealth.Shared.Handles;
+using GoodHealth.Shared.Handles.Interface;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;

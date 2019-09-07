@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GoodHealth.Domain.Notifications
+namespace GoodHealth.Shared.Notifications
 {
     public interface IDomainNotificationService
     {
