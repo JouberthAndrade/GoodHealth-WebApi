@@ -46,6 +46,7 @@ namespace GoodHealth.Data.Usuario.Repositories
             var query = Set
                             .OfType<Model.Usuario>()
                             .Include(x => x.Empresa)
+                            .Where(x => x.Ativo)
                             .OrderBy(x => x.Nome)
                          .AsQueryable();
 

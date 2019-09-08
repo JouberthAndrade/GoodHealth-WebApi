@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using GoodHealth.Application.Usuario.Commands;
+using GoodHealth.Application.Empresa.Commands;
 using GoodHealth.CroosCuttimg.Ioc;
 using GoodHealth.Domain.Empresa.Repositories;
 using GoodHealth.Domain.Result;
-using GoodHealth.Domain.Usuario.Repositories;
+using GoodHealth.Domain.Empresa.Repositories;
 using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Empresa;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Shared.Dto;
-using GoodHealth.Shared.Usuario;
+using GoodHealth.Shared.Empresa;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,6 +47,36 @@ namespace GoodHealth.WebApi.Controllers.Empresa
             retorno.TotalCount = empresas.TotalCount;
 
             return await _validationResultBuilder.BuildAsync(retorno);
+        }
+        [HttpGet("{id}")]
+        public async Task<ValidationResultModel<EmpresaDto>> GetById(Guid id)
+        {
+            var Empresa = await serviceProvider.GetRequiredService<IEmpresaReadRepository>().FindByIdAsync(id);
+            var dto = mapper.Map<EmpresaDto>(Empresa);
+
+            return await _validationResultBuilder.BuildAsync(dto);
+        }
+
+        [HttpPost]
+        public async Task<ValidationResultModel<CommandResult>> PostAsync([FromBody] InserirEditarEmpresaCommand command)
+        {
+            var result = await handler.SendCommand<InserirEditarEmpresaCommand, CommandResult>(command);
+            return await _validationResultBuilder.BuildAsync(result);
+        }
+
+        [HttpPut]
+        public async Task<ValidationResultModel<CommandResult>> UpdateAsync([FromBody] InserirEditarEmpresaCommand command)
+        {
+            var result = await handler.SendCommand<InserirEditarEmpresaCommand, CommandResult>(command);
+            return await _validationResultBuilder.BuildAsync(result);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ValidationResultModel<CommandResult>> Excluir([FromRoute]ExcluirEmpresaCommand command)
+        {
+            var cResult = await handler.SendCommand<ExcluirEmpresaCommand, CommandResult>(command);
+
+            return await _validationResultBuilder.BuildAsync(cResult);
         }
     }
 }

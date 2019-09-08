@@ -37,6 +37,10 @@ namespace GoodHealth.Domain.Empresa.Entities
             this.Endereco = endereco;
             this.Telefone = telefone;
         }
+        public void Atualizar(string nome)
+        {
+            this.Nome = nome;
+        }
 
         public void SetNomeEmpresa(string nome)
         {

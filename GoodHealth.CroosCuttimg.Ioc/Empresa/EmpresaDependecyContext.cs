@@ -10,6 +10,7 @@ namespace GoodHealth.CroosCuttimg.Ioc
         public static void EmpresaConfigure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped(typeof(IEmpresaReadRepository), typeof(EmpresaReadRepository));
+            services.AddScoped(typeof(IEmpresaWriteRepository), typeof(EmpresaWriteRepository));
 
         }
     }
