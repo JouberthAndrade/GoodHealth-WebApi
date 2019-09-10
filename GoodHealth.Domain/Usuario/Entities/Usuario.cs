@@ -59,7 +59,10 @@ namespace GoodHealth.Domain.Usuario.Entities
                 this.Id = id;
         }
 
-
-
+        public void SetEmpresa(Model.Empresa empresa)
+        {
+            if (empresa != null)
+                this.Empresa = empresa;
+        }
     }
 }

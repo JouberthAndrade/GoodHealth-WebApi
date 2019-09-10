@@ -49,7 +49,7 @@ namespace GoodHealth.WebApi.Controllers.Usuario
         [HttpGet("{id}")]
         public async Task<ValidationResultModel<UsuarioDto>> GetById(Guid id)
         {
-            var usuario = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindByIdAsync(id);
+            var usuario = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAsync(id);
             var dto = mapper.Map<UsuarioDto>(usuario);
 
             return await _validationResultBuilder.BuildAsync(dto);

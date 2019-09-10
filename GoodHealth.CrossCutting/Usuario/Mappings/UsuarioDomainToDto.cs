@@ -11,7 +11,8 @@ namespace GoodHealth.CrossCutting.Usuario.Mappings
         public UsuarioDomainToDto()
         {
             CreateMap<Model.Usuario, UsuarioDto>()
-                .ForMember(dest => dest.Empresa, opt => opt.MapFrom(src => src.Empresa.Nome));
+                .ForMember(dest => dest.NomeEmpresa, opt => opt.MapFrom(src => src.Empresa.Nome))
+                .ForMember(dest => dest.Empresa, opt => opt.MapFrom(src => src.Empresa));
 
             CreateMap<PagedQuery<Model.Usuario>, PagedQueryList<UsuarioDto>>();
         }
