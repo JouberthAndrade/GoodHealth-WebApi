@@ -12,6 +12,7 @@ namespace GoodHealth.CroosCuttimg.Ioc
         {
             services.UsuarioConfigure(configuration);
             services.EmpresaConfigure(configuration);
+            services.ProdutoConfigure(configuration);
 
             services.AddSingleton(ctx =>
             {

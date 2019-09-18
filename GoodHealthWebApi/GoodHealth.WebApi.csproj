@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Produto\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GoodHealth.Application\GoodHealth.Application.csproj" />
     <ProjectReference Include="..\GoodHealth.CroosCuttimg.Ioc\GoodHealth.CroosCuttimg.Ioc.csproj" />
     <ProjectReference Include="..\GoodHealth.Domain\GoodHealth.Domain.csproj" />

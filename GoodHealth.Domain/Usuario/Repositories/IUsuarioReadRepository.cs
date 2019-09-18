@@ -13,5 +13,12 @@ namespace GoodHealth.Domain.Usuario.Repositories
         Task<List<Model.Usuario>> FindAll();
 
         Task<PagedQuery<Model.Usuario>> FindAllPaged();
+
+        Task<List<Model.Usuario>> FilterByMonthAndYear(int mes, int ano);
+
+        Task<PagedQuery<Model.Usuario>> FindUsuarioComProdutosAssociados();
+
+
+
     }
 }

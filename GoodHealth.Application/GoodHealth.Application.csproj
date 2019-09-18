@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Produto\" />
+    <Folder Include="Produto\Commands\" />
+    <Folder Include="Produto\CommandsHandlers\" />
   </ItemGroup>
 
   <ItemGroup>

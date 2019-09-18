@@ -4,17 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Model = GoodHealth.Domain.Empresa.Entities;
+using ModelUsuarioProduto = GoodHealth.Domain.Usuario.Entities;
 
 namespace GoodHealth.Domain.Usuario.Entities
 {
     public class Usuario : Entity
     {
+        private readonly List<ModelUsuarioProduto.UsuarioProduto> usuarioProdutos = new List<ModelUsuarioProduto.UsuarioProduto>();
+
         public string Nome { get; private set; }
         public string Email { get; private set; }
         public string Telefone { get; private set; }
         public Guid? EmpresaId { get; private set; }
 
         public Model.Empresa Empresa { get; private set; }
+        public List<ModelUsuarioProduto.UsuarioProduto> UsuarioProdutos => usuarioProdutos;
 
         protected Usuario()
         {
@@ -45,18 +49,6 @@ namespace GoodHealth.Domain.Usuario.Entities
         public void SetNomeUsuario(string nome)
         {
             this.Nome = nome;
-        }
-
-        public void Delete()
-        {
-            this.Ativo = false;
-            this.DeletedDate = DateTime.Now;
-        }
-
-        public void SetId(Guid id)
-        {
-            if (id != Guid.Empty)
-                this.Id = id;
         }
 
         public void SetEmpresa(Model.Empresa empresa)

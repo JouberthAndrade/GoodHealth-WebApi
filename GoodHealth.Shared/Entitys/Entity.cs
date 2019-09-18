@@ -27,5 +27,17 @@ namespace GoodHealth.Shared.Entitys
                 this.Ativo = true;
             }
         }
+
+        public void Delete()
+        {
+            this.Ativo = false;
+            this.DeletedDate = DateTime.Now;
+        }
+
+        public void SetId(Guid id)
+        {
+            if (id != Guid.Empty)
+                this.Id = id;
+        }
     }
 }

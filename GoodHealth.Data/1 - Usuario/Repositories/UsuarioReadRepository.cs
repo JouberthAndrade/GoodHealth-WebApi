@@ -26,7 +26,10 @@ namespace GoodHealth.Data.Usuario.Repositories
         {
 
             return Task.FromResult(
-                Set.Include(x => x.Empresa)
+                Set
+                .Include(x => x.UsuarioProdutos)
+                .ThenInclude(x => x.Produto)
+                .Include(x => x.Empresa)
                     .Where(x => x.Id == id).FirstOrDefault()
                 );
 
@@ -39,6 +42,35 @@ namespace GoodHealth.Data.Usuario.Repositories
                 Set.Include(x => x.Empresa)
                 .OrderBy(x => x.Nome)
                 .ToList());
+        }
+
+        public Task<List<Model.Usuario>> FilterByMonthAndYear(int mes, int ano)
+        {
+            var query = Set
+                .OfType<Model.Usuario>()
+                .Include(x => x.Empresa)
+                .Where(x => x.CreateDate.Month.Equals(mes) && x.CreateDate.Year.Equals(ano))
+                .OrderBy(x => x.Nome)
+             .AsQueryable();
+
+            return Task.FromResult(query.ToList());
+        }
+
+        public Task<PagedQuery<Model.Usuario>> FindUsuarioComProdutosAssociados()
+        {
+            var query = Set
+                            .OfType<Model.Usuario>()
+                            .Include(x => x.Empresa)
+                            .Include(x => x.UsuarioProdutos)
+                            .ThenInclude(x => x.Produto)
+                            .Where(x => x.Ativo && x.UsuarioProdutos.Any())
+                            .OrderBy(x => x.Nome)
+                         .AsQueryable();
+
+
+            var orderBy = this.GetOderExpression("nome", "ASC");
+
+            return Task.FromResult(ApplyOrderFilterAndPagination(query, orderBy, null, new PageParameters(int.MaxValue, 1)));
         }
 
         public Task<PagedQuery<Model.Usuario>> FindAllPaged()
@@ -54,6 +86,18 @@ namespace GoodHealth.Data.Usuario.Repositories
             var orderBy = this.GetOderExpression("nome", "ASC");
 
             return Task.FromResult(ApplyOrderFilterAndPagination(query, orderBy, null, new PageParameters(int.MaxValue, 1)));
+        }
+        public Task<Model.UsuarioProduto> FindUsuarioProduto()
+        {
+            var query = Set
+                        .OfType<Model.UsuarioProduto>()
+                        //.Include(x => x.Usuario)
+                        //.ThenInclude(x => x.Empresa)
+                        //.Include(x => x.Produto)
+                        .AsQueryable();
+
+            var retorno = query.FirstOrDefault();
+            return Task.FromResult(retorno);
         }
 
         private IEnumerable<OrderByOption<Model.Usuario>> GetOderExpression(string orderProperty, string orderType)
@@ -108,5 +152,7 @@ namespace GoodHealth.Data.Usuario.Repositories
             if (condition != null)
                 query = query.Where(condition);
         }
+
+        
     }
 }

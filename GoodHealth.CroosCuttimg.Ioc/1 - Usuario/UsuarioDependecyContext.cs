@@ -11,7 +11,8 @@ namespace GoodHealth.CroosCuttimg.Ioc
         {
             services.AddScoped(typeof(IUsuarioReadRepository), typeof(UsuarioReadRepository));
             services.AddScoped(typeof(IUsuarioWriteRepository), typeof(UsuarioWriteRepository));
-            
+            services.AddScoped(typeof(IUsuarioProdutoRepository), typeof(UsuarioProdutoReadRepository));
+
         }
     }
 }

@@ -46,11 +46,32 @@ namespace GoodHealth.WebApi.Controllers.Usuario
             return await _validationResultBuilder.BuildAsync(retorno);
         }
 
+        [HttpGet("UsuarioProduto")]
+        public async Task<ValidationResultModel<PagedQueryList<UsuarioProdutoDto>>> GetUsuarioProduto()
+        {
+            var retorno = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindUsuarioComProdutosAssociados();
+            var dtoretorno = new PagedQueryList<UsuarioProdutoDto>();
+
+            dtoretorno.Items = mapper.Map<List<UsuarioProdutoDto>>(retorno.Items);
+            dtoretorno.TotalCount = retorno.TotalCount;
+
+            return await _validationResultBuilder.BuildAsync(dtoretorno);
+        }
+
         [HttpGet("{id}")]
         public async Task<ValidationResultModel<UsuarioDto>> GetById(Guid id)
         {
             var usuario = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAsync(id);
             var dto = mapper.Map<UsuarioDto>(usuario);
+
+            return await _validationResultBuilder.BuildAsync(dto);
+        }
+
+        [HttpGet("{mes}/{ano}")]
+        public async Task<ValidationResultModel<List<UsuarioDto>>> FilterByMonthAndYear(int mes, int ano)
+        {
+            var usuarios = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FilterByMonthAndYear(mes, ano);
+            var dto = mapper.Map<List<UsuarioDto>>(usuarios);
 
             return await _validationResultBuilder.BuildAsync(dto);
         }

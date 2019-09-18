@@ -34,6 +34,8 @@ namespace GoodHealth.Data.Usuario.Configurations
                 .WithMany(x => x.Usuarios)
                 .HasForeignKey(x => x.EmpresaId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
         }
     }
 }
