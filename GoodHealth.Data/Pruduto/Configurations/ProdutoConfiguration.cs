@@ -24,6 +24,8 @@ namespace GoodHealth.Data.Pruduto.Configurations
                 .HasColumnType("varchar(250)")
                 .IsRequired();
 
+            builder
+                .Ignore(x => x.Classe);
         }
     }
 }

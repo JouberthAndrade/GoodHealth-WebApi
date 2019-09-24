@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GoodHealth.Shared.Data;
 using GoodHealth.Shared.Produto;
+using GoodHealth.Shared.Relatorios;
 using GoodHealth.Shared.Shared.Dto;
 using GoodHealth.Shared.Usuario;
 using System.Collections.Generic;
@@ -31,7 +32,15 @@ namespace GoodHealth.CrossCutting.Usuario.Mappings
                     DataInicio = y.DataInico,
                     DataFim = y.DataFim
                 }).ToList()));
-            
+
+            CreateMap<Model.UsuarioProduto, PainelDto>()
+                .ForMember(dest => dest.ProdutoId, opt => opt.MapFrom(src => src.ProdutoId))
+                .ForMember(dest => dest.NomeProduto, opt => opt.MapFrom(src => src.Produto.Descricao))
+                .ForMember(dest => dest.FlagDia, opt => opt.MapFrom(src => src.FlagDia))
+                .ForMember(dest => dest.Classe, opt => opt.MapFrom(src => src.Produto.Classe))
+                .ForMember(dest => dest.QtdDiaProduto, opt => opt.MapFrom(src => src.Quantidade));
+
+            CreateMap<List<Model.UsuarioProduto>, List<UsuarioProdutoDto>>();
             CreateMap<PagedQuery<Model.Usuario>, PagedQueryList<UsuarioDto>>();
             CreateMap<PagedQuery<Model.Usuario>, PagedQueryList<UsuarioProdutoDto>>();
         }

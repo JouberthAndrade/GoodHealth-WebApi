@@ -14,6 +14,23 @@ namespace GoodHealth.Domain.Produto.Entities
         public string Descricao { get; private set; }
         public decimal Valor { get; private set; }
 
+        public string Classe {
+            get {
+                switch (Descricao.ToLower())
+                {
+                    case "salada de fruta":
+                        return "bg-success";
+                    case "fruta picada":
+                        return "bg-warning";
+                    case "suco detox":
+                        return "bg-danger";
+                    default:
+                        return "bg-primary";
+                }
+                
+            }
+        }
+
         public List<ModelUsuario.UsuarioProduto> UsuarioProdutos => usuarioProdutos;
 
         protected Produto()

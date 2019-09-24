@@ -24,6 +24,18 @@ namespace GoodHealth.Shared.Enum
 
             return field == null ? default(T) : (T)field.Field.GetRawConstantValue();
         }
+        public static string GetDescriptionFromEnumValue(System.Enum value)
+        {
+            if (value == null)
+                return "-";
+
+            DescriptionAttribute attribute = value.GetType()
+                .GetField(value.ToString())
+                .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                .FirstOrDefault() as DescriptionAttribute;
+
+            return attribute == null ? value.ToString() : attribute.Description;
+        }
 
     }
 }
