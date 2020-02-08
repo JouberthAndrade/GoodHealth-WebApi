@@ -45,9 +45,16 @@ namespace GoodHealth.WebApi.Controllers.Usuario
 
             return await _validationResultBuilder.BuildAsync(retorno);
         }
+        [HttpGet("UsuarioProduto/{id}")]
+        public async Task<ValidationResultModel<UsuarioProdutoDto>> GetUsuarioProduto(Guid id)
+        {
+            var retorno = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindAsync(id);
+            var dtoretorno =  mapper.Map<UsuarioProdutoDto>(retorno);
 
+            return await _validationResultBuilder.BuildAsync(dtoretorno);
+        }
         [HttpGet("UsuarioProduto")]
-        public async Task<ValidationResultModel<PagedQueryList<UsuarioProdutoDto>>> GetUsuarioProduto()
+        public async Task<ValidationResultModel<PagedQueryList<UsuarioProdutoDto>>> GetAllUsuarioProduto()
         {
             var retorno = await serviceProvider.GetRequiredService<IUsuarioReadRepository>().FindUsuarioComProdutosAssociados();
             var dtoretorno = new PagedQueryList<UsuarioProdutoDto>();

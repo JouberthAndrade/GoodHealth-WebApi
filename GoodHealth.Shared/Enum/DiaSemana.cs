@@ -8,11 +8,11 @@ namespace GoodHealth.Shared.Enum
     public enum DiaSemana
     {
         [Description("SG")]
-        ConsultasExames = 1,
+        Segunda = 1,
         [Description("TE")]
-        Retorno = 2,
+        Terca = 2,
         [Description("QA")]
-        Sessao = 3,
+        Quarta = 3,
         [Description("QI")]
         Quinta = 4,
         [Description("SX")]
