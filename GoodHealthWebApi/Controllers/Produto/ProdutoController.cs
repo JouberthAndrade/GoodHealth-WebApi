@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using GoodHealth.Application.Usuario.Commands;
+﻿using AutoMapper;
 using GoodHealth.CroosCuttimg.Ioc;
 using GoodHealth.Domain.Produto.Repositories;
 using GoodHealth.Domain.Result;
-using GoodHealth.Domain.Usuario.Repositories;
-using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Produto;
 using GoodHealth.Shared.Shared.Dto;
-using GoodHealth.Shared.Usuario;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GoodHealth.WebApi.Controllers.Produto
 {

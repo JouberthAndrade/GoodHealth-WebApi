@@ -18,6 +18,8 @@ using GoodHealth.CrossCutting.Empresa.Mappings;
 using Polly;
 using System.Net.Http;
 using GoodHealth.WebApi.Polices;
+using System.Diagnostics;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace GoodHealthWebApi
 {
@@ -25,9 +27,12 @@ namespace GoodHealthWebApi
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
+        public IHostingEnvironment Env { get; }
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            Env = env;
 
             CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("pt-BR");
             CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.DefaultThreadCurrentCulture;
@@ -102,6 +107,12 @@ namespace GoodHealthWebApi
             });
         }
 
+        [Conditional("debug")]
+        private void DisableApplicationInsightsOndebug()
+        {
+            TelemetryConfiguration.Active.DisableTelemetry = true;
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
@@ -114,8 +125,11 @@ namespace GoodHealthWebApi
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            DisableApplicationInsightsOndebug();
 
             app.UseCors("CorsPolicy");
 

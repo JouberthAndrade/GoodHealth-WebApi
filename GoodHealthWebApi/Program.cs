@@ -24,6 +24,7 @@ namespace GoodHealthWebApi
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("http://localhost:5101")
                 .UseStartup<Startup>()
+                .UseApplicationInsights()
                 .Build();
                 
     }
