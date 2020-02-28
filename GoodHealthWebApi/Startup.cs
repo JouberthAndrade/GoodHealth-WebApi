@@ -15,6 +15,9 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Http;
 using GoodHealth.CrossCutting.Empresa.Mappings;
+using Polly;
+using System.Net.Http;
+using GoodHealth.WebApi.Polices;
 
 namespace GoodHealthWebApi
 {
@@ -60,7 +63,21 @@ namespace GoodHealthWebApi
 
             ConfigureSwagger(services);
 
+            services.AddHttpClient(ServiceClientNames.ResourceService, c =>
+            {
+                c.BaseAddress = new Uri("http://localhost:5101");
+                c.DefaultRequestHeaders.Add("Accept", "application/json");
+                c.DefaultRequestHeaders.Add("User-Agent", "Sample-Application");
+            });
 
+            var retryPolicy = Policy
+                .HandleResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
+                .RetryAsync(2, onRetry: (message, retryCount) => 
+                {
+                    string msg = $"Retentativa: {retryCount}";
+                    Console.Out.WriteLineAsync(msg);
+                });
+            
         }
 
         private void ConfigureSwagger(IServiceCollection services)
@@ -116,7 +133,7 @@ namespace GoodHealthWebApi
 
             routeBuilder.MapGet("/", context =>
             {
-                return context.Response.WriteAsync("Api running.");
+                return context.Response.WriteAsync("Api now is running.");
             });
 
             app.UseRouter(routeBuilder.Build());
