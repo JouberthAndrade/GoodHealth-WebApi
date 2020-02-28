@@ -25,3 +25,4 @@ D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealthWebApi\bin\Debug\net
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealthWebApi\bin\Debug\netcoreapp2.2\GoodHealth.Application.pdb
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealthWebApi\bin\Debug\netcoreapp2.2\GoodHealth.CrossCutting.dll
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealthWebApi\bin\Debug\netcoreapp2.2\GoodHealth.CrossCutting.pdb
+D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealthWebApi\bin\Debug\netcoreapp2.2\GoodHealth.WebApi.xml

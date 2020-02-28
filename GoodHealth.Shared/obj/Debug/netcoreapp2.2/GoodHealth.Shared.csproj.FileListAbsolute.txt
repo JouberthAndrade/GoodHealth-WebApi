@@ -8,4 +8,3 @@ D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Shared\obj\Debug\ne
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Shared\obj\Debug\netcoreapp2.2\GoodHealth.Shared.pdb
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Shared\bin\Debug\netcoreapp2.2\GoodHealth.Shared.runtimeconfig.json
 D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Shared\bin\Debug\netcoreapp2.2\GoodHealth.Shared.runtimeconfig.dev.json
-D:\Projetos\GH\GoodHealth-WebApi\GoodHealthWebApi\GoodHealth.Shared\obj\Debug\netcoreapp2.2\GoodHealth.Shared.csprojAssemblyReference.cache
