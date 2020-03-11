@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using GoodHealth.Application.Usuario.Commands;
+﻿using AutoMapper;
+using GoodHealth.Application.Produto.Commands;
 using GoodHealth.CroosCuttimg.Ioc;
 using GoodHealth.Domain.Produto.Repositories;
 using GoodHealth.Domain.Result;
-using GoodHealth.Domain.Usuario.Repositories;
 using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Produto;
 using GoodHealth.Shared.Shared.Dto;
-using GoodHealth.Shared.Usuario;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GoodHealth.WebApi.Controllers.Produto
 {
@@ -49,6 +45,27 @@ namespace GoodHealth.WebApi.Controllers.Produto
         }
 
 
+        [HttpPost]
+        public async Task<ValidationResultModel<CommandResult>> PostAsync([FromBody] InserirEditarProdutoCommand command)
+        {
+            var result = await handler.SendCommand<InserirEditarProdutoCommand, CommandResult>(command);
+            return await _validationResultBuilder.BuildAsync(result);
+        }
+
+        [HttpPut]
+        public async Task<ValidationResultModel<CommandResult>> UpdateAsync([FromBody] InserirEditarProdutoCommand command)
+        {
+            var result = await handler.SendCommand<InserirEditarProdutoCommand, CommandResult>(command);
+            return await _validationResultBuilder.BuildAsync(result);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ValidationResultModel<CommandResult>> Excluir([FromRoute]ExcluirProdutoCommand command)
+        {
+            var cResult = await handler.SendCommand<ExcluirProdutoCommand, CommandResult>(command);
+
+            return await _validationResultBuilder.BuildAsync(cResult);
+        }
 
     }
 }

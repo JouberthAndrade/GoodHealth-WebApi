@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using GoodHealth.Application.Empresa.Commands;
 using GoodHealth.CroosCuttimg.Ioc;
 using GoodHealth.Domain.Empresa.Repositories;
 using GoodHealth.Domain.Result;
-using GoodHealth.Domain.Empresa.Repositories;
 using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Empresa;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Shared.Dto;
-using GoodHealth.Shared.Empresa;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 

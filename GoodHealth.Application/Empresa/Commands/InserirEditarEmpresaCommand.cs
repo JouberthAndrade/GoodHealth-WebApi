@@ -1,8 +1,6 @@
 ﻿using Flunt.Validations;
 using GoodHealth.Shared.Commands;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GoodHealth.Application.Empresa.Commands
 {
