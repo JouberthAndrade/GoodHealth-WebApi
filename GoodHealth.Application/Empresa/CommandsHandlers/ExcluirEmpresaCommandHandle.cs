@@ -6,9 +6,6 @@ using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Interfaces;
 using GoodHealth.Shared.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GoodHealth.Application.Empresa.CommandsHandlers
