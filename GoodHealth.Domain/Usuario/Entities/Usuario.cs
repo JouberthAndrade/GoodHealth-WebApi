@@ -16,9 +16,15 @@ namespace GoodHealth.Domain.Usuario.Entities
         public string Email { get; private set; }
         public string Telefone { get; private set; }
         public Guid? EmpresaId { get; private set; }
+        public string Login { get; private set; }
+        public string Senha { get; private set; }
+        public string TipoUsuario { get; private set; }
 
         public Model.Empresa Empresa { get; private set; }
         public List<ModelUsuarioProduto.UsuarioProduto> UsuarioProdutos => usuarioProdutos;
+
+
+        public string Token { get; private set; }
 
         protected Usuario()
         {
@@ -55,6 +61,10 @@ namespace GoodHealth.Domain.Usuario.Entities
         {
             if (empresa != null)
                 this.Empresa = empresa;
+        }
+        public void SetToken(string token)
+        {
+            this.Token = token;
         }
     }
 }

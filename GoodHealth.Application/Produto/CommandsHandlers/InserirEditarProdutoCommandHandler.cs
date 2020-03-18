@@ -45,12 +45,11 @@ namespace GoodHealth.Application.Produto.CommandsHandlers
             }
             else
             {
-                /*
-                var produtoEdit = await this.produtoWriteRepository.FindByIdAsync(command.Id.Value);
-                produtoEdit.Atualizar(produto.Nome);
+                var produtoEdit = await this.produtoReadRepository.FindByIdAsync(command.Id.Value);
+                produtoEdit.Atualizar(produto.Valor);
 
                 await this.produtoWriteRepository.UpdateAsync(produtoEdit);
-                produto = produtoEdit;*/
+                produto = produtoEdit;
             }
 
             var dto = mapper.Map<ProdutoDto>(produto);

@@ -7,11 +7,13 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GoodHealth.Domain\GoodHealth.Domain.csproj" />
+    <ProjectReference Include="..\GoodHealth.Dto\GoodHealth.Dto.csproj" />
   </ItemGroup>
 
 </Project>

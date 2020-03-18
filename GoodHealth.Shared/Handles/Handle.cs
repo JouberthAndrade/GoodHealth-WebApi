@@ -2,9 +2,6 @@
 using GoodHealth.Shared.Entitys.Interface;
 using GoodHealth.Shared.Handles.Interface;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GoodHealth.Shared.Handles

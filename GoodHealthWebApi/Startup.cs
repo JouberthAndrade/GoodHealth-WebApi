@@ -20,6 +20,12 @@ using System.Net.Http;
 using GoodHealth.WebApi.Polices;
 using System.Diagnostics;
 using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using GoodHealth.Dto.Login;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
 
 namespace GoodHealthWebApi
 {
@@ -45,6 +51,12 @@ namespace GoodHealthWebApi
             services.RegisterServices(Configuration);
             services.AddAutoMapper(typeof(Startup));
             services.RegisterRepositoryDependencies(Configuration["ConnectionStrings:DefaultConnection"]);
+
+            var tokenConfiguration = new TokenConfiguration();
+            new ConfigureFromConfigurationOptions<TokenConfiguration>(
+                Configuration.GetSection("TokenConfigurations"))
+                    .Configure(tokenConfiguration);
+            services.AddSingleton(tokenConfiguration);
 
             var profiles = new List<Profile> {
                 new UsuarioDomainToDto(),
@@ -73,6 +85,36 @@ namespace GoodHealthWebApi
                 c.BaseAddress = new Uri("http://localhost:5101");
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
                 c.DefaultRequestHeaders.Add("User-Agent", "Sample-Application");
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("user", policy => policy.RequireClaim("Store", "user"));
+                options.AddPolicy("admin", policy => policy.RequireClaim("Store", "admin"));
+                options.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
+                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                    .RequireAuthenticatedUser().Build());
+            });
+
+            var key = Encoding.ASCII.GetBytes(LoginSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero,
+                    ValidateAudience = false
+                };
             });
 
             var retryPolicy = Policy
@@ -134,6 +176,8 @@ namespace GoodHealthWebApi
             app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
             app.UseMvc();
 
             app.UseSwagger(c => c.PreSerializeFilters.Add((swagger, httpReq) => swagger.Host = httpReq.Host.Value));

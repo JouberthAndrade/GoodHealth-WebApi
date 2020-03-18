@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GoodHealth.Dto.Login;
 using GoodHealth.Shared.Data;
 using GoodHealth.Shared.Enum;
 using GoodHealth.Shared.Produto;
@@ -27,17 +28,19 @@ namespace GoodHealth.CrossCutting.Usuario.Mappings
                 .ForMember(dest => dest.QtdDiasSemana, opt => opt.MapFrom(src => src.UsuarioProdutos.GroupBy(x => x.FlagDia).Count()))
                 .ForMember(dest => dest.ValorTotal, opt => opt.MapFrom(src => src.UsuarioProdutos.Sum(x => x.Produto.Valor)))
                 .ForMember(dest => dest.Produtos, opt => opt.MapFrom(src => AgruparPorDia(src.UsuarioProdutos)));
-                
-                /*
-                src.UsuarioProdutos.Select(y => new ProdutoDto() {
-                    Id = y.Produto.Id,
-                    Descricao = y.Produto.Descricao,
-                    FlagDia = y.FlagDia,
-                    DiaSemana = GetDescriptionDia(y.FlagDia),
-                    Valor = y.Produto.Valor,
-                    DataInicio = y.DataInico,
-                    DataFim = y.DataFim
-                }).ToList()));*/
+
+            CreateMap<Model.Usuario, LoginDto>();
+
+            /*
+            src.UsuarioProdutos.Select(y => new ProdutoDto() {
+                Id = y.Produto.Id,
+                Descricao = y.Produto.Descricao,
+                FlagDia = y.FlagDia,
+                DiaSemana = GetDescriptionDia(y.FlagDia),
+                Valor = y.Produto.Valor,
+                DataInicio = y.DataInico,
+                DataFim = y.DataFim
+            }).ToList()));*/
 
             CreateMap<Model.UsuarioProduto, PainelDto>()
                 .ForMember(dest => dest.ProdutoId, opt => opt.MapFrom(src => src.ProdutoId))

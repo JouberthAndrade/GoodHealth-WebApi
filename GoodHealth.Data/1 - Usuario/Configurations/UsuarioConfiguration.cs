@@ -30,12 +30,31 @@ namespace GoodHealth.Data.Usuario.Configurations
                 .IsRequired();
 
             builder
+                .Property(b => b.Login)
+                .HasColumnName("Login")
+                .HasColumnType("varchar(250)")
+                .IsRequired();
+
+            builder
+                .Property(b => b.Senha)
+                .HasColumnName("Senha")
+                .HasColumnType("varchar(250)")
+                .IsRequired();
+
+            builder
+            .Property(b => b.TipoUsuario)
+            .HasColumnName("Perfil")
+            .HasColumnType("char(1)")
+            .IsRequired();
+
+
+            builder
                 .HasOne(x => x.Empresa)
                 .WithMany(x => x.Usuarios)
                 .HasForeignKey(x => x.EmpresaId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-
+            builder.Ignore(x => x.Token);
         }
     }
 }

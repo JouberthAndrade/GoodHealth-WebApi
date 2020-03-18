@@ -21,7 +21,7 @@ namespace GoodHealth.Data.Pruduto.Configurations
             builder
                 .Property(b => b.Valor)
                 .HasColumnName("Valor")
-                .HasColumnType("varchar(250)")
+                .HasColumnType("decimal(10,2)")
                 .IsRequired();
 
             builder

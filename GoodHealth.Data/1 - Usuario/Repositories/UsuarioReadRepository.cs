@@ -36,6 +36,7 @@ namespace GoodHealth.Data.Usuario.Repositories
 
         }
 
+
         public Task<List<Model.Usuario>> FindAll()
         {
             return Task.FromResult(
@@ -54,6 +55,17 @@ namespace GoodHealth.Data.Usuario.Repositories
              .AsQueryable();
 
             return Task.FromResult(query.ToList());
+        }
+
+        public Task<Model.Usuario> FindByLoginSenha(string login, string senha)
+        {
+            var usuario = Set
+                .OfType<Model.Usuario>()
+                .Include(x => x.Empresa)
+                .Where(x => x.Login == login && x.Senha == senha)
+             .FirstOrDefaultAsync();
+
+            return Task.FromResult(usuario.Result);
         }
 
         public Task<PagedQuery<Model.Usuario>> FindUsuarioComProdutosAssociados()

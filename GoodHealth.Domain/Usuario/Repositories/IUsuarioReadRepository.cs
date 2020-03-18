@@ -18,7 +18,7 @@ namespace GoodHealth.Domain.Usuario.Repositories
 
         Task<PagedQuery<Model.Usuario>> FindUsuarioComProdutosAssociados();
 
-
+        Task<Model.Usuario> FindByLoginSenha(string login, string senha);
 
     }
 }

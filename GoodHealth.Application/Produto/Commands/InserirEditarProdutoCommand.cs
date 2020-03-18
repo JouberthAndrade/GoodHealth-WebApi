@@ -17,7 +17,7 @@ namespace GoodHealth.Application.Produto.Commands
             AddNotifications(new Contract()
                 .IsNotNullOrEmpty(Descricao, "Nome", "O nome é obrigatório")
                 .HasMaxLen(Descricao, 250, "Nome", "O nome deve ter no máximo 250 caracteres.")
-                .IsLowerThan(Valor, 0, "Valor", "O valor não pode ser menor que 0")
+                .IsLowerThan(0, Valor, "Valor", "O valor não pode ser menor que 0")
             );
         }
     }

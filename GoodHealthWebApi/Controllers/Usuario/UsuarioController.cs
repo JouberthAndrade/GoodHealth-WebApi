@@ -11,12 +11,14 @@ using GoodHealth.Shared.Commands;
 using GoodHealth.Shared.Handles.Interface;
 using GoodHealth.Shared.Shared.Dto;
 using GoodHealth.Shared.Usuario;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GoodHealth.WebApi.Controllers.Usuario
 {
+    
     [Route("api/[controller]")]
     public class UsuarioController : BaseController
     {
@@ -29,11 +31,12 @@ namespace GoodHealth.WebApi.Controllers.Usuario
                                 IMapper mapper,
                                 IHandler handler) : base(validationResultBuilder)
         {
-            this.serviceProvider = serviceProvider;
-            this.mapper = mapper;
-            this.handler = handler;
+                this.serviceProvider = serviceProvider;
+                this.mapper = mapper;
+                this.handler = handler;
         }
 
+       
         [HttpGet]
         public async Task<ValidationResultModel<PagedQueryList<UsuarioDto>>> GetAsync()
         {

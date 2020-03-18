@@ -1,6 +1,7 @@
 ﻿using GoodHealth.Shared.Entitys;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using ModelUsuario = GoodHealth.Domain.Usuario.Entities;
 
@@ -12,6 +13,7 @@ namespace GoodHealth.Domain.Produto.Entities
         private readonly List<ModelUsuario.UsuarioProduto> usuarioProdutos = new List<ModelUsuario.UsuarioProduto>();
 
         public string Descricao { get; private set; }
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Valor { get; private set; }
 
         public string Classe {

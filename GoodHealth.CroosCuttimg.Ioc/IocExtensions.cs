@@ -1,4 +1,6 @@
-﻿using GoodHealth.CroosCuttimg.Ioc.Localizations;
+﻿using GoodHealth.Application.Usuario;
+using GoodHealth.Application.Usuario.Services.Interface;
+using GoodHealth.CroosCuttimg.Ioc.Localizations;
 using GoodHealth.CroosCuttimg.Ioc.MediatorExtensions;
 using GoodHealth.Data.Shared.Context;
 using GoodHealth.Data.Shared.Data;
@@ -23,6 +25,7 @@ namespace GoodHealth.CroosCuttimg.Ioc
             services.RegisterMediatorHandler(assemblies);
             services.RegisterJsonLocalization();
 
+            services.AddTransient<IUsuarioService, UsuarioService>();
 
             services.AddScoped<IValidationResultBuilder, ValidationResultBuilder>();
             services.AddScoped<IDomainNotificationService, DomainNotificationService>();
